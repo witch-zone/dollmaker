@@ -3,11 +3,11 @@ import { Provider } from 'react-redux'
 
 import configureStore from './store'
 
+import Title from './components/Title'
+
 const LookMaker = () => (
   <Provider store={configureStore()}>
-    <div>
-      hi :-)
-    </div>
+    <Title />
   </Provider>
 )
 
