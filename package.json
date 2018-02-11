@@ -1,0 +1,32 @@
+{
+  "name": "lookmaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/witch-zone/lookmaker.git"
+  },
+  "keywords": [],
+  "author": "dani quinn sexton <hello@glitter.tech> (http://glitter.tech)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/witch-zone/lookmaker/issues"
+  },
+  "homepage": "https://github.com/witch-zone/lookmaker#readme",
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.7.2",
+    "parcel-plugin-imagemin": "^1.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
