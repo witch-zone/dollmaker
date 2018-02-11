@@ -1,0 +1,53 @@
+{
+  "accessories": {
+    "name": {
+      "token": "Cozy"
+    },
+    "outfit": {
+      "src": ".png",
+      "layer": 0
+    }
+  },
+  "top": {
+    "name": {
+      "token": "Heart"
+    },
+    "outfit": {
+      "src": ".png",
+      "layer": 2
+    }
+  },
+  "bottom": {
+    "name": {
+      "token": "Princess"
+    },
+    "outfit": {
+      "src": ".png",
+      "layer": 1
+    }
+  },
+  "hat": {
+    "outfit": {
+      "src": ".png",
+      "layer": 0
+    }
+  },
+  "hair": {
+    "outfit": {
+      "src": ".png",
+      "layer": 0
+    }
+  },
+  "shoes": {
+    "outfit": {
+      "src": ".png",
+      "layer": 0
+    }
+  },
+  "sparkle": {
+    "outfit": {
+      "src": ".png",
+      "layer": 0
+    }
+  }
+}
