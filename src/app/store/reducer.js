@@ -1,26 +1,20 @@
 import { combineReducers } from 'redux'
 import { partial } from 'ramda'
 
-import getRandomItem from '../utils/getRandomItem'
+import createWardrobeFromLooks from './utils/createWardrobeFromLooks'
+import mapWardrobeToState from './utils/mapWardrobeToState'
+import getRandomOutfit from './utils/getRandomOutfit'
+
 import looks from './looks'
 import * as actions from './actions'
 
-const initialDollState = {
-  accessories: undefined,
-  top: undefined,
-  bottom: undefined,
-  hat: undefined,
-  hair: undefined,
-  shoes: undefined,
-  sparkle: undefined,
-}
+const initialDollState = {}
 
-const lookNames = Object.keys(looks)
-const partNames = Object.keys(initialDollState)
-
-const getRandomLook = partial(getRandomItem, [lookNames])
+const wardrobe = createWardrobeFromLooks(looks)
+const wardrobeState = mapWardrobeToState(wardrobe)
 
 const looksReducer = () => looks
+const wardrobeReducer = () => wardrobeState
 
 const dollReducer = (
   state = initialDollState,
@@ -33,12 +27,7 @@ const dollReducer = (
         ...payload,
       }
     case actions.RANDOMISE_PARTS:
-      return partNames.reduce(
-        (newParts, nextPart) => ({
-          ...newParts,
-          [nextPart]: getRandomLook(),
-        }), {}
-      )
+      return getRandomOutfit(wardrobe)
     default:
       return state
   }
@@ -46,5 +35,6 @@ const dollReducer = (
 
 export default combineReducers({
   looks: looksReducer,
+  wardrobe: wardrobeReducer,
   doll: dollReducer,
 })
