@@ -4,10 +4,14 @@ import { Provider } from 'react-redux'
 import configureStore from './store'
 
 import Title from './components/Title'
+import Wardrobe from './components/Wardrobe'
 
 const LookMaker = () => (
   <Provider store={configureStore()}>
-    <Title />
+    <div>
+      <Title />
+      <Wardrobe />
+    </div>
   </Provider>
 )
 
