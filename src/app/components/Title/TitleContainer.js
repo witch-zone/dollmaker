@@ -10,8 +10,7 @@ import Title from './Title'
 
 const mapStateToProps = (state) => ({
   title: createTitleFromLook(
-    selectors.getLooks(state),
-    selectors.getSelectedParts(state),
+    selectors.getCurrentLook(state),
   ),
 })
 

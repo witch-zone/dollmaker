@@ -1,26 +1,41 @@
-const getTitleKeysForLook = (looks, selected) => (
-  Object.keys(selected).filter(
-    part => !!selected[part]
-  ).map(
-    part => {
-      const selectedLook = selected[part]
-      return looks[selectedLook][part].name
-    }
-  ).filter(
-    lookName => !!lookName,
-  ).sort(
-    (a, b) => a.order - b.order
-  )
+import { compose, sort, filter, join, prop, map, values } from 'ramda'
+
+const existsFilter = (item) => !!item
+
+const compareNameTokens = (a, b) => {
+  const aHasOrdinal = !!a.order
+  const bHasOrdinal = !!b.order
+
+  if (!aHasOrdinal && !bHasOrdinal) {
+    return 0
+  }
+
+  if (aHasOrdinal && !bHasOrdinal) {
+    return -1
+  }
+
+  if (bHasOrdinal && !aHasOrdinal) {
+    return 1
+  }
+
+  return a.order - b.order
+}
+
+const createTitleFromNames = compose(
+  join(' '),
+  map(prop('token')),
+  sort(compareNameTokens),
+  values,
 )
 
-const createTitleFromLook = (looks, selected) => (
-  getTitleKeysForLook(
-    looks, selected
-  ).map(
-    key => key.token,
-  ).join(
-    ' '
-  )
+const getNamesFromLooks = compose(
+  filter(existsFilter),
+  map(prop('name')),
+)
+
+const createTitleFromLook = compose(
+  createTitleFromNames,
+  getNamesFromLooks,
 )
 
 export default createTitleFromLook
