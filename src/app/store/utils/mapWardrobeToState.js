@@ -1,19 +1,23 @@
-const mapShelfToPresenter = (shelf) => (
-  Object.keys(shelf).map(
-    (item) => ({
-      name: item,
-      ...shelf[item],
-    })
-  )
+import { compose, curry, map, toPairs } from 'ramda'
+
+const mapItemToPresenter = ([name, item]) => ({
+  name,
+  ...item,
+})
+
+const mapItemsToState = compose(
+  map(mapItemToPresenter),
+  toPairs,
 )
 
-const mapWardrobeToState = (wardrobe) => (
-  Object.keys(wardrobe).map(
-    (shelf) => ({
-      name: shelf,
-      items: mapShelfToPresenter(wardrobe[shelf]),
-    })
-  )
+const mapShelfToPresenter = ([name, items]) => ({
+  name,
+  items: mapItemsToState(items),
+})
+
+const mapWardrobeToState = compose(
+  map(mapShelfToPresenter),
+  toPairs,
 )
 
 export default mapWardrobeToState
