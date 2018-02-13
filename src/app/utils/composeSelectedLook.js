@@ -10,7 +10,10 @@ const composeSelectedLook = (looks, selected) => (
 
       return {
         ...fullLook,
-        [piece]: selectedLook[piece],
+        [piece]: {
+          name: selectedPiece,
+          ...selectedLook[piece],
+        },
       }
     }, {}
   )

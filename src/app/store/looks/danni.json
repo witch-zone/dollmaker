@@ -1,6 +1,6 @@
 {
   "accessories": {
-    "name": {
+    "title": {
       "token": "Authentic"
     },
     "outfit": {
@@ -9,7 +9,7 @@
     }
   },
   "top": {
-    "name": {
+    "title": {
       "token": "Nuggets"
     },
     "outfit": {
@@ -18,7 +18,7 @@
     }
   },
   "bottom": {
-    "name": {
+    "title": {
       "token": "Villainess"
     },
     "outfit": {

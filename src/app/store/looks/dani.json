@@ -1,6 +1,6 @@
 {
   "accessories": {
-    "name": {
+    "title": {
       "token": "Sparkling"
     },
     "outfit": {
@@ -9,7 +9,7 @@
     }
   },
   "top": {
-    "name": {
+    "title": {
       "token": "Pixie"
     },
     "outfit": {
@@ -18,7 +18,7 @@
     }
   },
   "bottom": {
-    "name": {
+    "title": {
       "token": "of Love"
     },
     "outfit": {

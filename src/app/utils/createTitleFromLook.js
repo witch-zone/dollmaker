@@ -30,7 +30,7 @@ const createTitleFromNames = compose(
 
 const getNamesFromLooks = compose(
   filter(existsFilter),
-  map(prop('name')),
+  map(prop('title')),
 )
 
 const createTitleFromLook = compose(

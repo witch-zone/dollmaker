@@ -13,7 +13,11 @@ const Shelf = ({
       {items.map((item) => (
         <li key={item.name}>
           <a
-            href="#"
+            style={{
+              textDecoration: 'underline',
+              cursor: 'pointer',
+              color: 'blue',
+            }}
             onClick={() => onClickItem(item.name)}
           >
             {item.name}

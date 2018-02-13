@@ -1,6 +1,6 @@
 {
   "accessories": {
-    "name": {
+    "title": {
       "token": "Delinquent"
     },
     "outfit": {
@@ -9,7 +9,7 @@
     }
   },
   "top": {
-    "name": {
+    "title": {
       "token": "Shiba"
     },
     "outfit": {
@@ -18,7 +18,7 @@
     }
   },
   "bottom": {
-    "name": {
+    "title": {
       "token": "Beauty"
     },
     "outfit": {

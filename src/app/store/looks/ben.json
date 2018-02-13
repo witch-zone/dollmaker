@@ -1,6 +1,6 @@
 {
   "accessories": {
-    "name": {
+    "title": {
       "token": "Nice"
     },
     "outfit": {
@@ -9,7 +9,7 @@
     }
   },
   "top": {
-    "name": {
+    "title": {
       "token": "Boy"
     },
     "outfit": {
@@ -18,7 +18,7 @@
     }
   },
   "bottom": {
-    "name": {
+    "title": {
       "token": "2018"
     },
     "outfit": {
