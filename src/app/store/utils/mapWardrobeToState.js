@@ -1,4 +1,5 @@
 import { compose, curry, map, toPairs } from 'ramda'
+import sortWardrobeShelves from '../../utils/sortWardrobeShelves'
 
 const mapItemToPresenter = ([name, item]) => ({
   name,
@@ -16,6 +17,7 @@ const mapShelfToPresenter = ([shelf, items]) => ({
 })
 
 const mapWardrobeToState = compose(
+  sortWardrobeShelves,
   map(mapShelfToPresenter),
   toPairs,
 )
