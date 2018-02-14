@@ -1,7 +1,8 @@
 {
   "accessories": {
     "title": {
-      "token": "Sparkling"
+      "token": "Sparkling",
+      "order": 0
     },
     "outfit": {
       "src": ".png",

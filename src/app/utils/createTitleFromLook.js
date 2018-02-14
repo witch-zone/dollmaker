@@ -1,14 +1,11 @@
-import { compose, sort, filter, join, prop, map, values } from 'ramda'
+import { compose, sort, filter, join, prop, map, toPairs } from 'ramda'
+import { compareWardrobeShelves } from './sortWardrobeShelves'
 
 const existsFilter = (item) => !!item
 
 const compareNameTokens = (a, b) => {
-  const aHasOrdinal = !!a.order
-  const bHasOrdinal = !!b.order
-
-  if (!aHasOrdinal && !bHasOrdinal) {
-    return 0
-  }
+  const aHasOrdinal = a.order !== undefined
+  const bHasOrdinal = b.order !== undefined
 
   if (aHasOrdinal && !bHasOrdinal) {
     return -1
@@ -18,14 +15,25 @@ const compareNameTokens = (a, b) => {
     return 1
   }
 
-  return a.order - b.order
+  if (aHasOrdinal && bHasOrdinal) {
+    return a.order - b.order
+  }
+
+  return 0
 }
+
+const mapShelfToNameToken = ([shelf, token]) => ({
+  ...token,
+  shelf,
+})
 
 const createTitleFromNames = compose(
   join(' '),
   map(prop('token')),
   sort(compareNameTokens),
-  values,
+  sort(compareWardrobeShelves),
+  map(mapShelfToNameToken),
+  toPairs,
 )
 
 const getNamesFromLooks = compose(

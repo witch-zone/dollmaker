@@ -10,10 +10,10 @@ const Wardrobe = ({
   <div>
     {shelves.map((shelf) => (
       <Shelf
-        key={shelf.name}
-        name={shelf.name}
+        key={shelf.shelf}
+        shelf={shelf.shelf}
         items={shelf.items}
-        onClickItem={(look) => onClickItem(shelf.name, look)}
+        onClickItem={(look) => onClickItem(shelf.shelf, look)}
       />
     ))}
   </div>

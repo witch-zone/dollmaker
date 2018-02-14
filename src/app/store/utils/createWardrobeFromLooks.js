@@ -1,11 +1,11 @@
 import { curry, map, toPairs, mergeDeepRight, reduce, compose, toPair } from 'ramda'
 
-const putItemOnShelf = (name, item) => ({
-  [name]: item.outfit,
+const putItemOnShelf = (shelf, item) => ({
+  [shelf]: item.outfit,
 })
 
-const organiseLookIntoShelves = ([name, look]) => {
-  const putItemOntoCurrentShelf = curry(putItemOnShelf)(name)
+const organiseLookIntoShelves = ([shelf, look]) => {
+  const putItemOntoCurrentShelf = curry(putItemOnShelf)(shelf)
   return map(putItemOntoCurrentShelf, look)
 }
 

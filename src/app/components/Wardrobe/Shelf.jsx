@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Shelf = ({
-  name,
+  shelf,
   items,
   onClickItem,
 }) => (
   <div>
-    <h2>{name}</h2>
+    <h2>{shelf}</h2>
 
     <ul>
       {items.map((item) => (

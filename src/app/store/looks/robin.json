@@ -1,7 +1,8 @@
 {
   "accessories": {
     "title": {
-      "token": "Rowdy"
+      "token": "Rowdy",
+      "order": 0
     },
     "outfit": {
       "src": ".png",

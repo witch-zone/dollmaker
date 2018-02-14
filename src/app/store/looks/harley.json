@@ -1,7 +1,8 @@
 {
   "accessories": {
     "title": {
-      "token": "Perfect"
+      "token": "Perfect",
+      "order": 0
     },
     "outfit": {
       "src": ".png",

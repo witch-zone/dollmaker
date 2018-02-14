@@ -10,8 +10,8 @@ const mapItemsToState = compose(
   toPairs,
 )
 
-const mapShelfToPresenter = ([name, items]) => ({
-  name,
+const mapShelfToPresenter = ([shelf, items]) => ({
+  shelf,
   items: mapItemsToState(items),
 })
 
