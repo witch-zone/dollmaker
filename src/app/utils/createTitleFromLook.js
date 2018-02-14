@@ -1,7 +1,6 @@
 import { compose, sort, filter, join, prop, map, toPairs } from 'ramda'
+import existsFilter from './existsFilter'
 import { compareWardrobeShelves } from './sortWardrobeShelves'
-
-const existsFilter = (item) => !!item
 
 const compareNameTokens = (a, b) => {
   const aHasOrdinal = a.order !== undefined

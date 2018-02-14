@@ -1,21 +1,14 @@
+import { mapObjIndexed, curry } from 'ramda'
+
+const getPieceFromLook = (looks, name, piece) => ({
+  name,
+  ...looks[name][piece]
+})
+
 const composeSelectedLook = (looks, selected) => (
-  Object.keys(selected).reduce(
-    (fullLook, piece) => {
-      const selectedPiece = selected[piece]
-      const selectedLook = looks[selectedPiece]
-
-      if (!selectedLook) {
-        return fullLook
-      }
-
-      return {
-        ...fullLook,
-        [piece]: {
-          name: selectedPiece,
-          ...selectedLook[piece],
-        },
-      }
-    }, {}
+  mapObjIndexed(
+    curry(getPieceFromLook)(looks),
+    selected,
   )
 )
 
