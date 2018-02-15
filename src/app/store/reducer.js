@@ -4,14 +4,15 @@ import { partial } from 'ramda'
 import createWardrobeFromLooks from './utils/createWardrobeFromLooks'
 import mapWardrobeToState from './utils/mapWardrobeToState'
 import getRandomOutfit from './utils/getRandomOutfit'
+import getLookFromQueryString from './utils/getLookFromQueryString'
 
 import looks from './looks'
 import * as actions from './actions'
 
-const initialDollState = {}
-
 const wardrobe = createWardrobeFromLooks(looks)
 const wardrobeState = mapWardrobeToState(wardrobe)
+
+const initialDollState = getLookFromQueryString(wardrobe)
 
 const looksReducer = () => looks
 const wardrobeReducer = () => wardrobeState
