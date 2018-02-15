@@ -1,4 +1,4 @@
-import { compose, sort, filter, join, prop, map, toPairs } from 'ramda'
+import { compose, sort, filter, join, prop, map, mapObjIndexed, values } from 'ramda'
 import existsFilter from './existsFilter'
 import { compareWardrobeShelves } from './sortWardrobeShelves'
 
@@ -21,7 +21,7 @@ const compareNameTokens = (a, b) => {
   return 0
 }
 
-const mapShelfToNameToken = ([shelf, token]) => ({
+const mapShelfToNameToken = (token, shelf) => ({
   ...token,
   shelf,
 })
@@ -31,8 +31,8 @@ const createTitleFromNames = compose(
   map(prop('token')),
   sort(compareNameTokens),
   sort(compareWardrobeShelves),
-  map(mapShelfToNameToken),
-  toPairs,
+  values,
+  mapObjIndexed(mapShelfToNameToken),
 )
 
 const getNamesFromLooks = compose(

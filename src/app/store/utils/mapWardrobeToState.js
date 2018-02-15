@@ -1,25 +1,25 @@
-import { compose, curry, map, toPairs } from 'ramda'
+import { compose, curry, map, mapObjIndexed, values } from 'ramda'
 import sortWardrobeShelves from '../../utils/sortWardrobeShelves'
 
-const mapItemToPresenter = ([name, item]) => ({
+const addNameToItems = (item, name) => ({
   name,
   ...item,
 })
 
-const mapItemsToState = compose(
-  map(mapItemToPresenter),
-  toPairs,
+const mapItemsToPresenter = compose(
+  values,
+  mapObjIndexed(addNameToItems),
 )
 
-const mapShelfToPresenter = ([shelf, items]) => ({
+const addNameToShelves = (items, shelf) => ({
   shelf,
-  items: mapItemsToState(items),
+  items: mapItemsToPresenter(items),
 })
 
 const mapWardrobeToState = compose(
   sortWardrobeShelves,
-  map(mapShelfToPresenter),
-  toPairs,
+  values,
+  mapObjIndexed(addNameToShelves),
 )
 
 export default mapWardrobeToState
