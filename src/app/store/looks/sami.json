@@ -5,8 +5,8 @@
       "order": 0
     },
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "sami/accessories.png",
+      "order": 0
     }
   },
   "top": {
@@ -14,8 +14,8 @@
       "token": "Heart"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 2
+      "src": "sami/top.png",
+      "order": 2
     }
   },
   "bottom": {
@@ -23,32 +23,32 @@
       "token": "Princess"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 1
+      "src": "sami/bottom.png",
+      "order": 1
     }
   },
   "hat": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "sami/hat.png",
+      "order": 0
     }
   },
   "hair": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "sami/hair.png",
+      "order": 0
     }
   },
   "shoes": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "sami/shoes.png",
+      "order": 0
     }
   },
   "sparkle": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "sami/sparkle.png",
+      "order": 0
     }
   }
 }

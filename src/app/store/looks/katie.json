@@ -5,8 +5,8 @@
       "order": 0
     },
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "katie/accessories.png",
+      "order": 0
     }
   },
   "top": {
@@ -14,8 +14,8 @@
       "token": "Girl"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 2
+      "src": "katie/top.png",
+      "order": 2
     }
   },
   "bottom": {
@@ -23,32 +23,32 @@
       "token": "Power"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 1
+      "src": "katie/bottom.png",
+      "order": 1
     }
   },
   "hat": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "katie/hat.png",
+      "order": 0
     }
   },
   "hair": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "katie/hair.png",
+      "order": 0
     }
   },
   "shoes": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "katie/shoes.png",
+      "order": 0
     }
   },
   "sparkle": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "katie/sparkle.png",
+      "order": 0
     }
   }
 }

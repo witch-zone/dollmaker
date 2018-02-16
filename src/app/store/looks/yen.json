@@ -5,8 +5,8 @@
       "order": 0
     },
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "yen/accessories.png",
+      "order": 0
     }
   },
   "top": {
@@ -14,8 +14,8 @@
       "token": "Gremlin"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 2
+      "src": "yen/top.png",
+      "order": 2
     }
   },
   "bottom": {
@@ -23,32 +23,32 @@
       "token": "of Mischief"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 1
+      "src": "yen/bottom.png",
+      "order": 1
     }
   },
   "hat": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "yen/hat.png",
+      "order": 0
     }
   },
   "hair": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "yen/hair.png",
+      "order": 0
     }
   },
   "shoes": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "yen/shoes.png",
+      "order": 0
     }
   },
   "sparkle": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "yen/sparkle.png",
+      "order": 0
     }
   }
 }

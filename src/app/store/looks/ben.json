@@ -4,8 +4,8 @@
       "token": "Nice"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "ben/accessories.png",
+      "order": 0
     }
   },
   "top": {
@@ -13,8 +13,8 @@
       "token": "Boy"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 2
+      "src": "ben/top.png",
+      "order": 2
     }
   },
   "bottom": {
@@ -22,32 +22,32 @@
       "token": "2018"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 1
+      "src": "ben/bottom.png",
+      "order": 1
     }
   },
   "hat": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "ben/hat.png",
+      "order": 0
     }
   },
   "hair": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "ben/hair.png",
+      "order": 0
     }
   },
   "shoes": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "ben/shoes.png",
+      "order": 0
     }
   },
   "sparkle": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "ben/sparkle.png",
+      "order": 0
     }
   }
 }

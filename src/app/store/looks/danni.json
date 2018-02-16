@@ -5,8 +5,8 @@
       "order": 0
     },
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "danni/accessories.png",
+      "order": 0
     }
   },
   "top": {
@@ -14,8 +14,8 @@
       "token": "Nuggets"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 2
+      "src": "danni/top.png",
+      "order": 2
     }
   },
   "bottom": {
@@ -23,32 +23,32 @@
       "token": "Villainess"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 1
+      "src": "danni/bottom.png",
+      "order": 1
     }
   },
   "hat": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "danni/hat.png",
+      "order": 0
     }
   },
   "hair": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "danni/hair.png",
+      "order": 0
     }
   },
   "shoes": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "danni/shoes.png",
+      "order": 0
     }
   },
   "sparkle": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "danni/sparkle.png",
+      "order": 0
     }
   }
 }

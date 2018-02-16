@@ -37,10 +37,10 @@ const compareWardrobeShelves = (
   return a.localeCompare(b)
 }
 
-const sortWardrobeShelves = sort(compareWardrobeShelves)
+const sortByWardrobeShelves = sort(compareWardrobeShelves)
 
 export {
   compareWardrobeShelves,
 }
 
-export default sortWardrobeShelves
+export default sortByWardrobeShelves

@@ -5,8 +5,8 @@
       "order": 0
     },
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "robin/accessoies.png",
+      "order": 0
     }
   },
   "top": {
@@ -14,8 +14,8 @@
       "token": "Butler"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 2
+      "src": "robin/top.png",
+      "order": 2
     }
   },
   "bottom": {
@@ -23,32 +23,32 @@
       "token": "From the Future"
     },
     "outfit": {
-      "src": ".png",
-      "layer": 1
+      "src": "robin/bottom.png",
+      "order": 1
     }
   },
   "hat": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "robin/hat.png",
+      "order": 0
     }
   },
   "hair": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "robin/hair.png",
+      "order": 0
     }
   },
   "shoes": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "robin/shoes.png",
+      "order": 0
     }
   },
   "sparkle": {
     "outfit": {
-      "src": ".png",
-      "layer": 0
+      "src": "robin/sparkle.png",
+      "order": 0
     }
   }
 }

@@ -2,22 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Doll = ({
-  accessories = {},
-  bottom = {},
-  hair = {},
-  hat = {},
-  shoes = {},
-  sparkle = {},
-  top = {},
+  layers,
 }) => (
   <ul>
-    <li>Accessories: {accessories.name}</li>
-    <li>Bottom: {bottom.name}</li>
-    <li>Hair: {hair.name}</li>
-    <li>Hat: {hat.name}</li>
-    <li>Shoes: {shoes.name}</li>
-    <li>Sparkle: {sparkle.name}</li>
-    <li>Top: {top.name}</li>
+    {layers.map(
+      (layer) => (
+        <li key={layer.shelf}>
+          [layer {layer.order}] {layer.shelf}: {layer.src}
+        </li>
+      )
+    )}
   </ul>
 )
 
