@@ -1,5 +1,5 @@
 import { compose, curry, map, mapObjIndexed, values } from 'ramda'
-import sortWardrobeShelves from '../../utils/sortByWardrobeShelves'
+import sortWardrobeShelves from '../../utils/sortByShelf'
 
 const addNameToItems = (item, name) => ({
   name,

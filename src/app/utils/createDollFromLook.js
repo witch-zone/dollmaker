@@ -1,11 +1,11 @@
 import { compose, map, prop, values, mapObjIndexed, tap } from 'ramda'
 import { sortByReverseOrder } from './sortByOrder'
-import sortByWardrobeShelves from './sortByWardrobeShelves'
+import sortByShelf from './sortByShelf'
 import mapWardrobeToShelfArray from './mapWardrobeToShelfArray'
 
 const createDollFromOutfits = compose(
   sortByReverseOrder,
-  sortByWardrobeShelves,
+  sortByShelf,
   mapWardrobeToShelfArray,
 )
 

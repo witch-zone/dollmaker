@@ -60,10 +60,7 @@ class Doll extends Component {
     loadedImages
       .reverse()
       .forEach(
-        (image) => {
-          console.log('drawing', image)
-          ctx.drawImage(image, 0, 0, 339, 665)
-        }
+        (image) => ctx.drawImage(image, 0, 0, 339, 665)
       )
   }
 
@@ -73,17 +70,17 @@ class Doll extends Component {
     } = this.props
 
     return (
-      <div>
-        <canvas
-          ref="canvas"
-          height={CANVAS_HEIGHT}
-          width={CANVAS_WIDTH}
-          style={{
-            height: `${CANVAS_HEIGHT / 2}px`,
-            width: `${CANVAS_WIDTH / 2}px`,
-          }}
-        />
-      </div>
+      <canvas
+        ref="canvas"
+        height={CANVAS_HEIGHT}
+        width={CANVAS_WIDTH}
+        style={{
+          width: `100%`,
+          maxWidth: `${CANVAS_WIDTH / 2}px`,
+          height: `auto`,
+          objectFit: 'contain',
+        }}
+      />
     )
   }
 }

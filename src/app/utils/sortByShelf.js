@@ -14,7 +14,7 @@ const knownShelvesOrder = zipObj(
   keys(knownShelves),
 )
 
-const compareWardrobeShelves = (
+const compareShelves = (
   { shelf: a },
   { shelf: b },
 ) => {
@@ -38,10 +38,10 @@ const compareWardrobeShelves = (
   return a.localeCompare(b)
 }
 
-const sortByWardrobeShelves = sort(compareWardrobeShelves)
+const sortByShelf = sort(compareShelves)
 
 export {
-  compareWardrobeShelves,
+  compareShelves,
 }
 
-export default sortByWardrobeShelves
+export default sortByShelf

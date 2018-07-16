@@ -1,14 +1,14 @@
 import { compose, sort, filter, join, prop, map, mapObjIndexed, values } from 'ramda'
 import existsFilter from './existsFilter'
 import sortByOrder from './sortByOrder'
-import sortByWardrobeShelves from './sortByWardrobeShelves'
+import sortByShelf from './sortByShelf'
 import mapWardrobeToShelfArray from './mapWardrobeToShelfArray'
 
 const createTitleFromNames = compose(
   join(' '),
   map(prop('token')),
   sortByOrder,
-  sortByWardrobeShelves,
+  sortByShelf,
   mapWardrobeToShelfArray,
 )
 
