@@ -30,7 +30,7 @@
   "hat": {
     "outfit": {
       "src": "harley/hat.png",
-      "order": 0
+      "order": 1
     }
   },
   "hair": {
