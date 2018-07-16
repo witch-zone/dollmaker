@@ -9,6 +9,8 @@ import saffron from './saffron.json'
 import sami from './sami.json'
 import yen from './yen.json'
 
+import glasses from './glasses'
+
 export default {
   ben,
   dani,
@@ -20,4 +22,5 @@ export default {
   saffron,
   sami,
   yen,
+  ...glasses,
 }

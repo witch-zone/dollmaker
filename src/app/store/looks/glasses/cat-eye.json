@@ -1,0 +1,8 @@
+{
+  "glasses": {
+    "outfit": {
+      "src": "glasses/cat-eye.png",
+      "order": 0
+    }
+  }
+}
