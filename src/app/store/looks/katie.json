@@ -15,7 +15,7 @@
     },
     "outfit": {
       "src": "katie/top.png",
-      "order": 2
+      "order": 1
     }
   },
   "bottom": {
@@ -24,7 +24,7 @@
     },
     "outfit": {
       "src": "katie/bottom.png",
-      "order": 1
+      "order": 2
     }
   },
   "hat": {
@@ -42,7 +42,7 @@
   "shoes": {
     "outfit": {
       "src": "katie/shoes.png",
-      "order": 0
+      "order": 3
     }
   },
   "sparkle": {

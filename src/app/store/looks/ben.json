@@ -15,7 +15,7 @@
     },
     "outfit": {
       "src": "ben/top.png",
-      "order": 2
+      "order": 1
     }
   },
   "bottom": {
@@ -24,13 +24,13 @@
     },
     "outfit": {
       "src": "ben/bottom.png",
-      "order": 1
+      "order": 2
     }
   },
   "hat": {
     "outfit": {
       "src": "ben/hat.png",
-      "order": 2
+      "order": 1
     }
   },
   "hair": {
@@ -42,7 +42,7 @@
   "shoes": {
     "outfit": {
       "src": "ben/shoes.png",
-      "order": 0
+      "order": 3
     }
   },
   "sparkle": {
