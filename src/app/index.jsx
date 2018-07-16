@@ -11,17 +11,15 @@ const LookMaker = () => (
   <Provider store={configureStore()}>
     <main
       style={{
-        width: '66%',
-        maxWidth: '30em',
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'center',
       }}
     >
       <section
         style={{
-          width: '60%',
-          position: 'fixed',
+          position: 'sticky',
           zIndex: 1,
         }}
       >
@@ -31,10 +29,7 @@ const LookMaker = () => (
 
       <nav
         style={{
-          position: 'relative',
           zIndex: 2,
-          width: '40%',
-          marginLeft: '60%',
         }}
       >
         <Wardrobe />
