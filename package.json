@@ -4,8 +4,8 @@
   "description": "this valentine's day, why not create yourself a whole new Look?",
   "private": true,
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build --public-url ./ src/index.html",
+    "start": "NODE_ENV=development webpack-dev-server --mode development",
+    "build": "NODE_ENV=production webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,12 +20,6 @@
   },
   "homepage": "http://lookmaker.witch.zone",
   "dependencies": {
-    "babel-plugin-ramda": "^1.4.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "node-sass": "^4.7.2",
-    "parcel-bundler": "^1.5.1",
     "prop-types": "^15.6.0",
     "query-string": "^5.1.0",
     "ramda": "^0.25.0",
@@ -36,6 +30,26 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
-    "parcel-plugin-imagemin": "^1.0.2"
+    "autoprefixer": "^8.6.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-ramda": "^1.4.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imagemin-webpack-plugin": "^2.1.5",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   }
 }
