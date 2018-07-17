@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
-const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
 
 const autoprefixer = require('autoprefixer')
 
@@ -41,28 +40,28 @@ module.exports = {
           process.env.NODE_ENV === 'development'
             ? { loader: 'style-loader' }
             : MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-                plugins: () => [
-                  autoprefixer(),
-                ],
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: () => [
+                autoprefixer(),
+              ],
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                includePaths: ['node_modules'],
-                sourceMap: true,
-              },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['node_modules'],
+              sourceMap: true,
             },
+          },
         ],
       },
     ],
@@ -83,29 +82,25 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
-      inlineSource: 'preloader\.(.*)\.css$',
-      excludeAssets: [
-        /preloader.*.js/,
-      ],
+      inlineSource: 'preloader\.(.*)\.(js|css)$',
       minify: {
         collapseWhitespace: true,
         minifyCSS: true,
         minifyJS: true,
       },
     }),
-    new HtmlWebpackExcludeAssetsPlugin(),
     new HtmlWebpackInlineSourcePlugin(),
     new CopyWebpackPlugin([{
       from: 'src/assets/',
       to: 'assets/',
     }]),
-    // new ImageminPlugin({
-    //   test: /\.(jpe?g|png|gif|svg)$/i,
-    //   disable: process.env.NODE_ENV !== 'production',
-    //   pngquant: {
-    //     quality: '80-100',
-    //   }
-    // }),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      disable: process.env.NODE_ENV !== 'production',
+      pngquant: {
+        quality: '80-100',
+      }
+    }),
   ],
 
   optimization: {
@@ -117,13 +112,7 @@ module.exports = {
           chunks: 'all',
           enforce: true
         },
-        lookmaker: {
-          name: 'lookmaker',
-          test: /\.scss$/,
-          chunks: 'all',
-          enforce: true
-        }
-      }
+      },
     }
   },
 
