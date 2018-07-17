@@ -9,29 +9,13 @@ import Wardrobe from './components/Wardrobe'
 
 const LookMaker = () => (
   <Provider store={configureStore()}>
-    <main
-      style={{
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-      }}
-    >
-      <section
-        style={{
-          position: 'sticky',
-          zIndex: 1,
-        }}
-      >
+    <main className="o-wardrobe-wrapper">
+      <section>
         <Title />
         <Doll />
       </section>
 
-      <nav
-        style={{
-          zIndex: 2,
-        }}
-      >
+      <nav>
         <Wardrobe />
       </nav>
     </main>

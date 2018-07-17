@@ -1,8 +1,17 @@
-body {
-  color: $colour-highlight;
-  background: $colour-background;
+* {
+  box-sizing: border-box;
 }
 
-a {
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 0 4em;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
   color: $colour-highlight;
+  background: $colour-background;
 }
