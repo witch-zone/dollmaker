@@ -13,14 +13,24 @@ class Doll extends Component {
     this.updateDoll()
   }
 
-  componentDidUpdate() {
-    this.updateDoll()
+  componentDidUpdate(prevState) {
+    const {
+      layers: prevLayers,
+    } = prevState
+
+    const {
+      layers: newLayers,
+    } = this.props
+
+    if (prevLayers !== newLayers) {
+      this.updateDoll()  
+    }
   }
 
   getNewGraphicsContext() {
     const canvas = this.refs.canvas
     const ctx = canvas.getContext("2d")
-    
+
     // setting scale and drawing twice as big then sizing down using
     // style widths allows for a much nicer display on retina-y screens
     ctx.resetTransform()
@@ -39,7 +49,7 @@ class Doll extends Component {
 
     const imagesToLoad = layers
       .map(
-        (layer) => promiseMeAnImage(`assets/${layer.src}`)
+        (layer) => promiseMeAnImage(`assets/looks/${layer.src}`)
       )
 
     // IDEA: spicy state for incomplete dolls?
