@@ -64,6 +64,32 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpe?g|png)$/i,
+        include: [
+          /src/,
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[name].[ext]',
+            },
+          },
+          {
+            loader: 'img-loader',
+            options: {
+              minimize: true,
+              svgo: {
+                plugins: [
+                  { removeUnknownsAndDefaults: false },
+                  { removeUselessStrokeAndFill: false },
+                ],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
 
@@ -91,8 +117,8 @@ module.exports = {
     }),
     new HtmlWebpackInlineSourcePlugin(),
     new CopyWebpackPlugin([{
-      from: 'src/assets/',
-      to: 'assets/',
+      from: 'src/assets/looks/',
+      to: 'assets/looks/',
     }]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,

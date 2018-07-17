@@ -2,7 +2,6 @@ import { compose } from 'recompose'
 import { connect } from 'react-redux'
 
 import * as selectors from '../../store/selectors'
-import * as actions from '../../store/actions'
 
 import createTitleFromLook from '../../utils/createTitleFromLook'
 
@@ -14,10 +13,6 @@ const mapStateToProps = (state) => ({
   ),
 })
 
-const mapDispatchToProps = {
-  onRandomise: actions.randomiseParts,
-}
-
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps),
 )(Title)

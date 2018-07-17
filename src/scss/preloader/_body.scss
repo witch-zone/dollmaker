@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   min-height: 100vh;
@@ -8,9 +6,10 @@ body {
   padding: 0 0 4em;
 
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  flex-flow: column nowrap;
+  align-items: stretch;
   justify-content: center;
+  text-align: center;
 
   color: $colour-highlight;
   background: $colour-background;

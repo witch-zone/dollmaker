@@ -1,10 +1,15 @@
+@import "~normalize.css";
+
 @import 'settings/hot-looks-palette';
+@import 'settings/layout';
 
 @import 'base/preloader';
 
-@import 'objects/o-wardrobe-wrapper';
-
+@import 'components/c-lookmaker';
+@import 'components/c-doll-wrapper';
+@import 'components/c-wardrobe-wrapper';
 @import 'components/c-wardrobe-button';
+@import 'components/c-title';
 
 body {
   font-family: 'Noyh R';

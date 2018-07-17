@@ -9,15 +9,17 @@ import Wardrobe from './components/Wardrobe'
 
 const LookMaker = () => (
   <Provider store={configureStore()}>
-    <main className="o-wardrobe-wrapper">
-      <section>
-        <Title />
-        <Doll />
-      </section>
+    <main className="c-lookmaker">
+      <div className="c-lookmaker__controls">
+        <section className="c-lookmaker__doll c-doll-wrapper">
+          <Title />
+          <Doll />
+        </section>
 
-      <nav>
-        <Wardrobe />
-      </nav>
+        <nav className="c-lookmaker__wardrobe c-wardrobe-wrapper">
+          <Wardrobe />
+        </nav>
+      </div>
     </main>
   </Provider>
 )

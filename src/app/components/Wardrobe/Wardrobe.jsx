@@ -6,6 +6,7 @@ import Shelf from './Shelf'
 const Wardrobe = ({
   shelves,
   onClickItem,
+  onRandomise,
 }) => (
   <div>
     {shelves.map((shelf) => (
@@ -16,6 +17,10 @@ const Wardrobe = ({
         onClickItem={(look) => onClickItem(shelf.shelf, look)}
       />
     ))}
+    
+    <button onClick={onRandomise}>
+      choose me a LOOK
+    </button>
   </div>
 )
 

@@ -2,15 +2,10 @@ import React from 'react'
 
 const Title = ({
   title,
-  onRandomise,
 }) => (
-  <div>
-    <h1>{title}</h1>
-
-    <button onClick={onRandomise}>
-      choose me a LOOK
-    </button>
-  </div>
+  <h1 className="c-title">
+    {title}
+  </h1>
 )
 
 export default Title

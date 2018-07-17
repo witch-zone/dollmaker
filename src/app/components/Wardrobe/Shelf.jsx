@@ -7,8 +7,6 @@ const Shelf = ({
   onClickItem,
 }) => (
   <div>
-    <h2>{shelf}</h2>
-
     <ul>
       {items.map((item) => (
         <li key={item.name}>

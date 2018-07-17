@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import promiseMeAnImage from '../../utils/promiseMeAnImage'
 
-const baseDoll = promiseMeAnImage('assets/base.png')
+const baseDoll = promiseMeAnImage('assets/looks/base.png')
 
 const CANVAS_HEIGHT = 1331
 const CANVAS_WIDTH = 678
@@ -23,7 +23,7 @@ class Doll extends Component {
     } = this.props
 
     if (prevLayers !== newLayers) {
-      this.updateDoll()  
+      this.updateDoll()
     }
   }
 
@@ -85,7 +85,6 @@ class Doll extends Component {
         width={CANVAS_WIDTH}
         style={{
           width: `100%`,
-          maxWidth: `${CANVAS_WIDTH / 2}px`,
           height: `auto`,
           objectFit: 'contain',
         }}

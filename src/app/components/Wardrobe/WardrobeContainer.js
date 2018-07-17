@@ -15,6 +15,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   onClickItem: actions.setPart,
+  onRandomise: actions.randomiseParts,
 }
 
 export default compose(
