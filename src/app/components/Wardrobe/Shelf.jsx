@@ -12,16 +12,12 @@ const Shelf = ({
     <ul>
       {items.map((item) => (
         <li key={item.name}>
-          <a
-            style={{
-              textDecoration: 'underline',
-              cursor: 'pointer',
-              color: 'blue',
-            }}
+          <button
+            className="c-wardrobe-button"
             onClick={() => onClickItem(item.name)}
           >
             {item.name}
-          </a>
+          </button>
         </li>
       ))}
     </ul>

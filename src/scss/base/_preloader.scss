@@ -1,0 +1,17 @@
+#✨ {
+  &.‼️ {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#💭 {
+  &.‼️ {
+    opacity: 0;
+    visibility: hidden;
+
+    .p-logo {
+      transform: translateX(-50%) translateY(-50%) scale(0.9);
+    }
+  }
+}

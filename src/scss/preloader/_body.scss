@@ -1,4 +1,8 @@
 body {
-  color: $colour-white;
-  background: $colour-border-dark;
+  color: $colour-highlight;
+  background: $colour-background;
+}
+
+a {
+  color: $colour-highlight;
 }
