@@ -5,6 +5,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
 
 const autoprefixer = require('autoprefixer')
 
@@ -74,31 +76,56 @@ module.exports = {
     new CleanWebpackPlugin([
       './dist',
     ]),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[name].[hash].css',
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
+      inlineSource: 'preloader\.(.*)\.css$',
+      excludeAssets: [
+        /preloader.*.js/,
+      ],
       minify: {
         collapseWhitespace: true,
         minifyCSS: true,
         minifyJS: true,
       },
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css',
-    }),
+    new HtmlWebpackExcludeAssetsPlugin(),
+    new HtmlWebpackInlineSourcePlugin(),
     new CopyWebpackPlugin([{
       from: 'src/assets/',
       to: 'assets/',
     }]),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      disable: process.env.NODE_ENV !== 'production',
-      pngquant: {
-        quality: '80-100',
-      }
-    }),
+    // new ImageminPlugin({
+    //   test: /\.(jpe?g|png|gif|svg)$/i,
+    //   disable: process.env.NODE_ENV !== 'production',
+    //   pngquant: {
+    //     quality: '80-100',
+    //   }
+    // }),
   ],
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        preloader: {
+          name: 'preloader',
+          test: /preloader\.scss$/,
+          chunks: 'all',
+          enforce: true
+        },
+        lookmaker: {
+          name: 'lookmaker',
+          test: /\.scss$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
 
   devServer: {
     contentBase: './dist'

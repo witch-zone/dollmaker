@@ -1,0 +1,33 @@
+#✨ {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#💭 {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+
+  .p-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+#✨,
+#💭,
+#💭 .p-logo {
+  transition-duration: 0.33s;
+  transition-property: all;
+  transition-timing-function: ease-out;
+}
