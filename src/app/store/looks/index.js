@@ -1,3 +1,5 @@
+import nothing from './nothing.json'
+
 import ben from './ben.json'
 import dani from './dani.json'
 import danni from './danni.json'
@@ -12,6 +14,8 @@ import yen from './yen.json'
 import glasses from './glasses'
 
 export default {
+  nothing,
+
   ben,
   dani,
   danni,
@@ -22,5 +26,6 @@ export default {
   saffron,
   sami,
   yen,
+
   ...glasses,
 }
