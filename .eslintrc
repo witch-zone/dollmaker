@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "no-restricted-globals": "off",
+    "import/named": "error",
+    "import/default": "error",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": true
+      }
+    ],
+    "arrow-parens": ["error", "always"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": ["", ".js", ".jsx"]
+      }
+    }
+  }
+}

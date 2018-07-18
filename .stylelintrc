@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "ignoreFiles": "node_modules",
+  "rules": {
+    "selector-class-pattern": "",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/dollar-variable-no-missing-interpolation": true,
+    "scss/at-mixin-argumentless-call-parentheses": "never"
+  }
+}
