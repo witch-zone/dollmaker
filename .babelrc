@@ -2,7 +2,11 @@
   "presets": [
     "react",
     "stage-3",
-    "env"
+    ["env", {
+      "targets": {
+        "browsers": "> 5%"
+      }
+    }]
   ],
   "plugins": [
     "ramda"
