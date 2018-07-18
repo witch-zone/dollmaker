@@ -1,5 +1,19 @@
-$lookmaker-width: 1766px;
-$lookmaker-height: 1956px;
-$aspect-ratio: ($lookmaker-width / $lookmaker-height) * 100%;
-$display-width: $lookmaker-width / 2;
-$doll-width: 56.75%;
+$mq-medium: "screen and (min-width: 600px)";
+$mq-large: "screen and (min-width: 900px)";
+
+$base-spacing: 1rem;
+$body-padding: 4rem 0;
+
+$lookmaker-height: 1766px;
+$lookmaker-width: 1956px;
+$doll-width: 1108px;
+$wardrobe-width: $lookmaker-width - $doll-width;
+
+$max-display-width: $lookmaker-width / 2;
+$doll-display-width: percentage($doll-width / $lookmaker-width);
+
+$lookmaker-aspect-ratio: ($lookmaker-height / $lookmaker-width) * 100%;
+$doll-aspect-ratio: ($lookmaker-height / $doll-width) * 100%;
+$wardrobe-aspect-ratio: ($lookmaker-height / $wardrobe-width) * 100%;
+
+$doll-frame-padding: 19%;

@@ -1,6 +1,5 @@
 .c-doll-wrapper {
-  position: relative;
-  padding: 100px;
+  padding: $doll-frame-padding;
 
   background: url('../assets/wardrobe.png');
   background-repeat: no-repeat;

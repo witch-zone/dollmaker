@@ -3,7 +3,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 0 0 4em;
+  padding: $body-padding;
 
   display: flex;
   flex-flow: column nowrap;
@@ -13,6 +13,4 @@ body {
 
   color: $colour-highlight;
   background: $colour-background;
-
-  font-family: 'Lookmaker';
 }

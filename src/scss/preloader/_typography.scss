@@ -1,0 +1,27 @@
+html {
+  font-size: $base-font-size-small;
+
+  @media #{$mq-medium} {
+    font-size: $base-font-size-medium;
+  }
+
+  @media #{$mq-large} {
+    font-size: $base-font-size-large;
+  }
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: inherit;
+  line-height: $base-line-height;
+  letter-spacing: $base-letter-spacing;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: $font-weight-bold;
+}

@@ -1,7 +1,11 @@
+@import 'settings/layout';
+@import 'settings/typography';
 @import 'settings/hot-looks-palette';
 
 @import 'preloader/fonts';
+@import 'preloader/typography';
 @import 'preloader/body';
+
 @import 'preloader/preloader';
 @import 'preloader/logo';
 @import 'preloader/with-love';

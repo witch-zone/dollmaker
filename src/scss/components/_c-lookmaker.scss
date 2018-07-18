@@ -1,8 +1,16 @@
 .c-lookmaker {
   margin: 0 auto;
+  max-width: $max-display-width;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.c-lookmaker__furniture {
   position: relative;
   overflow: hidden;
-  width: $display-width;
 
   &::before {
     content: "";
@@ -10,7 +18,7 @@
     margin-left: -1px;
     float: left;
     height: 0;
-    padding-top: $aspect-ratio;
+    padding-top: $lookmaker-aspect-ratio;
   }
 }
 
@@ -20,20 +28,23 @@
   top: 0;
   width: 100%;
   height: 100%;
-
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: stretch;
 }
 
 .c-lookmaker__doll {
-  width: $doll-width;
+  width: $doll-display-width;
   flex-grow: 0;
   flex-shrink: 0;
+
+  &::before {
+    padding-top: $doll-aspect-ratio;
+  }
 }
 
 .c-lookmaker__wardrobe {
   flex-grow: 1;
   flex-shrink: 1;
+
+  &::before {
+    padding-top: $wardrobe-aspect-ratio;
+  }
 }
