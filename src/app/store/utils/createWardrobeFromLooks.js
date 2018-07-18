@@ -1,4 +1,6 @@
-import { curry, map, toPairs, mergeDeepRight, reduce, compose, toPair, tap } from 'ramda'
+import {
+  curry, map, toPairs, mergeDeepRight, reduce, compose,
+} from 'ramda'
 
 const putItemOnShelf = (shelf, item) => ({
   [shelf]: item.outfit,

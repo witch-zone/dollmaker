@@ -15,7 +15,7 @@ const common = {
   target: 'web',
 
   entry: {
-    lookmaker: './src/index.jsx'
+    lookmaker: './src/index.jsx',
   },
 
   output: {
@@ -29,7 +29,7 @@ const common = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.scss$/i,
@@ -100,12 +100,12 @@ const common = {
             },
           },
         ],
-      }
+      },
     ],
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
 
   plugins: [
@@ -139,7 +139,7 @@ const common = {
       disable: process.env.NODE_ENV !== 'production',
       pngquant: {
         quality: '80-100',
-      }
+      },
     }),
   ],
 }
@@ -158,10 +158,10 @@ const production = {
           name: 'preloader',
           test: /preloader\.scss$/,
           chunks: 'all',
-          enforce: true
+          enforce: true,
         },
       },
-    }
+    },
   },
 }
 
@@ -170,8 +170,8 @@ const development = {
   devtool: 'inline-source-map',
 
   devServer: {
-    contentBase: './dist'
-  }
+    contentBase: './dist',
+  },
 }
 
 module.exports = () => {

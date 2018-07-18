@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Shelf = ({
-  shelf,
   items,
   onClickItem,
 }) => (
@@ -11,6 +10,7 @@ const Shelf = ({
       {items.map((item) => (
         <li key={item.name}>
           <button
+            type="button"
             className="c-wardrobe-button"
             onClick={() => onClickItem(item.name)}
           >
@@ -21,5 +21,16 @@ const Shelf = ({
     </ul>
   </div>
 )
+
+Shelf.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  })),
+  onClickItem: PropTypes.func.isRequired,
+}
+
+Shelf.defaultProps = {
+  items: [],
+}
 
 export default Shelf

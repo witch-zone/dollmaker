@@ -5,7 +5,7 @@ import sortByShelf from './sortByShelf'
 
 const sortByShelfAndOrder = compose(
   sortByOrder,
-  sortByShelf
+  sortByShelf,
 )
 
 export default sortByShelfAndOrder

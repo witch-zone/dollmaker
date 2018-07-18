@@ -1,4 +1,6 @@
-import { compose, map, prop, values, mapObjIndexed, tap, filter } from 'ramda'
+import {
+  compose, map, prop, filter,
+} from 'ramda'
 import { sortByReverseOrder } from './sortByOrder'
 import sortByShelf from './sortByShelf'
 import mapWardrobeToShelfArray from './mapWardrobeToShelfArray'

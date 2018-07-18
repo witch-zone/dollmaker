@@ -5,6 +5,8 @@
   ],
   "ignoreFiles": "node_modules",
   "rules": {
+    "order/properties-alphabetical-order": null,
+    "selector-max-id": null,
     "selector-class-pattern": "",
     "scss/selector-no-redundant-nesting-selector": true,
     "scss/at-extend-no-missing-placeholder": true,

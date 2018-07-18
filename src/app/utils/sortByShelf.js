@@ -1,13 +1,13 @@
 import { zipObj, keys, sort } from 'ramda'
 
 const knownShelves = [
-  "accessories",
-  "hat",
-  "glasses",
-  "hair",
-  "top",
-  "bottom",
-  "shoes",
+  'accessories',
+  'hat',
+  'glasses',
+  'hair',
+  'top',
+  'bottom',
+  'shoes',
 ]
 
 const knownShelvesOrder = zipObj(

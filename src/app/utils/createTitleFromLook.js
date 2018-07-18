@@ -1,4 +1,6 @@
-import { compose, sort, filter, join, prop, map, mapObjIndexed, values } from 'ramda'
+import {
+  compose, filter, join, prop, map,
+} from 'ramda'
 import existsFilter from './existsFilter'
 import sortByOrder from './sortByOrder'
 import sortByShelf from './sortByShelf'

@@ -1,4 +1,4 @@
-const promiseMeAnImage = src => new Promise(
+const promiseMeAnImage = (src) => new Promise(
   (resolve, reject) => {
     const img = new Image()
 
@@ -6,7 +6,7 @@ const promiseMeAnImage = src => new Promise(
     img.onerror = () => reject(img)
 
     img.src = src
-  }
+  },
 )
 
 export default promiseMeAnImage

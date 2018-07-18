@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { partial } from 'ramda'
 
 import createWardrobeFromLooks from './utils/createWardrobeFromLooks'
 import mapWardrobeToState from './utils/mapWardrobeToState'

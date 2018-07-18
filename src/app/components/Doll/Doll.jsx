@@ -28,8 +28,7 @@ class Doll extends Component {
   }
 
   getNewGraphicsContext() {
-    const canvas = this.refs.canvas
-    const ctx = canvas.getContext("2d")
+    const ctx = this.canvas.getContext('2d')
 
     // setting scale and drawing twice as big then sizing down using
     // style widths allows for a much nicer display on retina-y screens
@@ -37,7 +36,7 @@ class Doll extends Component {
     ctx.scale(2, 2)
 
     // clears out any old dolls drawn onto the canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
 
     return ctx
   }
@@ -49,7 +48,7 @@ class Doll extends Component {
 
     const imagesToLoad = layers
       .map(
-        (layer) => promiseMeAnImage(`assets/looks/${layer.src}`)
+        (layer) => promiseMeAnImage(`assets/looks/${layer.src}`),
       )
 
     // IDEA: spicy state for incomplete dolls?
@@ -69,28 +68,34 @@ class Doll extends Component {
     loadedImages
       .reverse()
       .forEach(
-        (image) => ctx.drawImage(image, 0, 0, 339, 665)
+        (image) => ctx.drawImage(image, 0, 0, 339, 665),
       )
   }
 
   render() {
-    const {
-      layers,
-    } = this.props
-
     return (
       <canvas
-        ref="canvas"
+        ref={(canvas) => { this.canvas = canvas }}
         height={CANVAS_HEIGHT}
         width={CANVAS_WIDTH}
         style={{
-          width: `100%`,
-          height: `auto`,
+          width: '100%',
+          height: 'auto',
           objectFit: 'contain',
         }}
       />
     )
   }
+}
+
+Doll.propTypes = {
+  layers: PropTypes.arrayOf(PropTypes.shape({
+    src: PropTypes.string.isRequired,
+  })),
+}
+
+Doll.defaultProps = {
+  layers: [],
 }
 
 export default Doll

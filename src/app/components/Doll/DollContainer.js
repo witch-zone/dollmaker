@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
     layers: sortedLayers.filter(
       // TODO: fix sparkle layers
       (layer) => layer.shelf !== 'sparkle',
-    )
+    ),
   }
 }
 

@@ -2,7 +2,7 @@ import { mapObjIndexed, curry } from 'ramda'
 
 const getPieceFromLook = (looks, name, piece) => ({
   name,
-  ...looks[name][piece]
+  ...looks[name][piece],
 })
 
 const composeSelectedLook = (looks, selected) => (

@@ -12,16 +12,31 @@ const Wardrobe = ({
     {shelves.map((shelf) => (
       <Shelf
         key={shelf.shelf}
-        shelf={shelf.shelf}
         items={shelf.items}
         onClickItem={(look) => onClickItem(shelf.shelf, look)}
       />
     ))}
-    
-    <button onClick={onRandomise}>
+
+    <button
+      type="button"
+      onClick={onRandomise}
+    >
       choose me a LOOK
     </button>
   </div>
 )
+
+Wardrobe.propTypes = {
+  shelves: PropTypes.arrayOf(PropTypes.shape({
+    shelf: PropTypes.string,
+    items: PropTypes.array,
+  })),
+  onClickItem: PropTypes.func.isRequired,
+  onRandomise: PropTypes.func.isRequired,
+}
+
+Wardrobe.defaultProps = {
+  shelves: [],
+}
 
 export default Wardrobe

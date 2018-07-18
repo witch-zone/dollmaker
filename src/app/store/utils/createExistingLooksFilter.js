@@ -1,4 +1,6 @@
-import { compose, curry, __, mapObjIndexed, filter, pickBy, tap } from 'ramda'
+import {
+  curry, __, pickBy,
+} from 'ramda'
 
 const lookExistsInWardrobe = (look, shelf, wardrobe) => (
   wardrobe[shelf] !== undefined && wardrobe[shelf][look] !== undefined
