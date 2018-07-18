@@ -1,15 +1,17 @@
 const path = require('path')
-
+const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const autoprefixer = require('autoprefixer')
 
-module.exports = {
+const common = {
   target: 'web',
 
   entry: {
@@ -19,8 +21,6 @@ module.exports = {
   output: {
     path: path.resolve('./dist'),
     filename: '[name].[hash].js',
-    library: 'LookMaker',
-    libraryTarget: 'umd',
     publicPath: '/',
   },
 
@@ -101,6 +101,9 @@ module.exports = {
     new CleanWebpackPlugin([
       './dist',
     ]),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',
@@ -128,8 +131,16 @@ module.exports = {
       }
     }),
   ],
+}
+
+const production = {
+  mode: 'production',
 
   optimization: {
+    minimizer: [
+      new UglifyJsPlugin(),
+      new OptimizeCssAssetsPlugin(),
+    ],
     splitChunks: {
       cacheGroups: {
         preloader: {
@@ -141,8 +152,27 @@ module.exports = {
       },
     }
   },
+}
+
+const development = {
+  mode: 'development',
+  devtool: 'inline-source-map',
 
   devServer: {
     contentBase: './dist'
+  }
+}
+
+module.exports = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      ...common,
+      ...production,
+    }
+  }
+
+  return {
+    ...common,
+    ...development,
   }
 }
