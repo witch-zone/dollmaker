@@ -6,3 +6,12 @@
   background-position: top left;
   background-size: auto 100%;
 }
+
+.c-doll-wrapper__title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: $doll-title-padding;
+  height: $doll-title-height;
+  width: 100%;
+}

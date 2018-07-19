@@ -9,7 +9,7 @@
 
 .c-wardrobe__shelf {
   flex: auto 1 1;
-  padding: 2.5% 2.5% 2.5% 27.5%;
+  padding: $wardrobe-shelf-padding;
 
   display: flex;
   flex-flow: row nowrap;
