@@ -26,7 +26,10 @@ const dollReducer = (
         ...filterLooksByExisting(payload, wardrobe),
       }
     case actions.RANDOMISE_PARTS:
-      return getRandomOutfit(wardrobe)
+      return {
+        ...state,
+        ...getRandomOutfit(wardrobe),
+      }
     default:
       return state
   }
