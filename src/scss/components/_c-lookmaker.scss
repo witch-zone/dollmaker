@@ -1,11 +1,7 @@
 .c-lookmaker {
   margin: 0 auto;
-  max-width: $max-display-width;
-
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: flex-start;
+  width: 94%;
+  max-width: $max-vertical-display-width;
 }
 
 .c-lookmaker__furniture {
@@ -37,10 +33,6 @@
 .c-lookmaker__doll {
   background-position: top left;
 
-  width: $doll-display-width;
-  flex-grow: 0;
-  flex-shrink: 0;
-
   &::before {
     padding-top: $doll-aspect-ratio;
   }
@@ -49,10 +41,29 @@
 .c-lookmaker__wardrobe {
   background-position: top right;
 
-  flex-grow: 1;
-  flex-shrink: 1;
-
   &::before {
     padding-top: $wardrobe-aspect-ratio;
+  }
+}
+
+@media #{$mq-medium} {
+  .c-lookmaker {
+    max-width: $max-horizontal-display-width;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .c-lookmaker__doll {
+    width: $doll-display-width;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .c-lookmaker__wardrobe {
+    flex-grow: 1;
+    flex-shrink: 1;
   }
 }

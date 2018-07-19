@@ -1,7 +1,8 @@
-$mq-medium: 'screen and (min-width: 600px)';
+$mq-medium: 'screen and (min-width: 700px)';
 $mq-large: 'screen and (min-width: 900px)';
 
 $base-spacing: 1rem;
+$body-padding-small: 0.5rem 0;
 $body-padding: 4rem 0;
 
 /*
@@ -25,7 +26,9 @@ $lookmaker-width: 1956px;
 $doll-width: 1108px;
 $wardrobe-width: $lookmaker-width - $doll-width;
 
-$max-display-width: $lookmaker-width / 2;
+$max-vertical-display-width: 400px;
+$max-horizontal-display-width: $lookmaker-width / 2;
+
 $doll-display-width: percentage($doll-width / $lookmaker-width);
 
 $lookmaker-aspect-ratio: ($lookmaker-height / $lookmaker-width) * 100%;
