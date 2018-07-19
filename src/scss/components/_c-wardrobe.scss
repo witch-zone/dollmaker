@@ -1,0 +1,26 @@
+.c-wardrobe {
+  padding: $wardrobe-frame-padding;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.c-wardrobe__shelf {
+  flex: auto 1 1;
+  padding: 2.5% 2.5% 2.5% 27.5%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+// glasses are sort of kind of hidden on the ui as a special treat
+.c-wardrobe__shelf--glasses {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

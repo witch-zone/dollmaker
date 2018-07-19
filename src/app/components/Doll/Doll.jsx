@@ -73,8 +73,13 @@ class Doll extends Component {
   }
 
   render() {
+    const {
+      className,
+    } = this.props
+
     return (
       <canvas
+        className={className}
         ref={(canvas) => { this.canvas = canvas }}
         height={CANVAS_HEIGHT}
         width={CANVAS_WIDTH}
@@ -92,10 +97,12 @@ Doll.propTypes = {
   layers: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string.isRequired,
   })),
+  className: PropTypes.string,
 }
 
 Doll.defaultProps = {
   layers: [],
+  className: null,
 }
 
 export default Doll

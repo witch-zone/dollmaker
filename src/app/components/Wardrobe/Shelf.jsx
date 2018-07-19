@@ -1,28 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 const Shelf = ({
+  name,
   items,
   onClickItem,
 }) => (
-  <div>
-    <ul>
+  <div
+    className={classnames(
+      'c-wardrobe__shelf',
+      `c-wardrobe__shelf--${name}`,
+    )}
+  >
+    <div className="c-wardrobe__items">
       {items.map((item) => (
-        <li key={item.name}>
-          <button
-            type="button"
-            className="c-wardrobe-button"
-            onClick={() => onClickItem(item.name)}
-          >
-            {item.name}
-          </button>
-        </li>
+        <button
+          key={item.name}
+          type="button"
+          className="c-wardrobe-button"
+          onClick={() => onClickItem(item.name)}
+        >
+          {item.name}
+        </button>
       ))}
-    </ul>
+    </div>
   </div>
 )
 
 Shelf.propTypes = {
+  name: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
   })),

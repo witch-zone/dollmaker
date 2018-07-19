@@ -1,28 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import Shelf from './Shelf'
 
 const Wardrobe = ({
   shelves,
   onClickItem,
-  onRandomise,
+  className,
 }) => (
-  <div>
+  <div
+    className={classnames(
+      'c-wardrobe',
+      className,
+    )}
+  >
     {shelves.map((shelf) => (
       <Shelf
         key={shelf.shelf}
+        name={shelf.shelf}
         items={shelf.items}
         onClickItem={(look) => onClickItem(shelf.shelf, look)}
       />
     ))}
-
-    <button
-      type="button"
-      onClick={onRandomise}
-    >
-      choose me a LOOK
-    </button>
   </div>
 )
 
@@ -32,11 +32,12 @@ Wardrobe.propTypes = {
     items: PropTypes.array,
   })),
   onClickItem: PropTypes.func.isRequired,
-  onRandomise: PropTypes.func.isRequired,
+  className: PropTypes.string,
 }
 
 Wardrobe.defaultProps = {
   shelves: [],
+  className: null,
 }
 
 export default Wardrobe
