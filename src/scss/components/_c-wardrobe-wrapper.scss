@@ -1,9 +1,4 @@
 .c-wardrobe-wrapper {
-  background: url('../assets/wardrobe.png');
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: auto 100%;
-
   display: flex;
   flex-flow: column nowrap;
 }
@@ -13,5 +8,5 @@
 }
 
 .c-wardrobe-wrapper__controls {
-  flex: 8% 0 0;
+  flex: $wardrobe-controls-height 0 0;
 }

@@ -12,6 +12,10 @@
   position: relative;
   overflow: hidden;
 
+  background: url('../assets/wardrobe.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+
   &::before {
     content: '';
     width: 1px;
@@ -31,6 +35,8 @@
 }
 
 .c-lookmaker__doll {
+  background-position: top left;
+
   width: $doll-display-width;
   flex-grow: 0;
   flex-shrink: 0;
@@ -41,6 +47,8 @@
 }
 
 .c-lookmaker__wardrobe {
+  background-position: top right;
+
   flex-grow: 1;
   flex-shrink: 1;
 
