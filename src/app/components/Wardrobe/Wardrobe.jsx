@@ -6,6 +6,7 @@ import Shelf from './Shelf'
 
 const Wardrobe = ({
   shelves,
+  selected,
   onClickItem,
   className,
 }) => (
@@ -20,6 +21,7 @@ const Wardrobe = ({
         key={shelf.shelf}
         name={shelf.shelf}
         items={shelf.items}
+        selected={selected[shelf.shelf]}
         onClickItem={(look) => onClickItem(shelf.shelf, look)}
       />
     ))}
@@ -31,12 +33,14 @@ Wardrobe.propTypes = {
     shelf: PropTypes.string,
     items: PropTypes.array,
   })),
+  selected: PropTypes.shape({}),
   onClickItem: PropTypes.func.isRequired,
   className: PropTypes.string,
 }
 
 Wardrobe.defaultProps = {
   shelves: [],
+  selected: {},
   className: null,
 }
 

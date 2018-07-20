@@ -4,6 +4,7 @@ import classnames from 'classnames'
 
 const Shelf = ({
   name,
+  selected,
   items,
   onClickItem,
 }) => (
@@ -23,6 +24,9 @@ const Shelf = ({
           'c-wardrobe__button',
           'c-look-icon',
           item.name,
+          {
+            'is-selected': selected === item.name,
+          },
         )}
         onClick={() => onClickItem(item.name)}
       />
@@ -32,6 +36,7 @@ const Shelf = ({
 
 Shelf.propTypes = {
   name: PropTypes.string.isRequired,
+  selected: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
   })),
@@ -40,6 +45,7 @@ Shelf.propTypes = {
 
 Shelf.defaultProps = {
   items: [],
+  selected: null,
 }
 
 export default Shelf

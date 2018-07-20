@@ -11,6 +11,7 @@ import Wardrobe from './Wardrobe'
 
 const mapStateToProps = (state) => ({
   shelves: selectors.getWardrobe(state),
+  selected: selectors.getSelectedParts(state),
 })
 
 const mapDispatchToProps = {

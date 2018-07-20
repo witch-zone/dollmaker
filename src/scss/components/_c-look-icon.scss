@@ -1,10 +1,27 @@
 @import '~_icons-sprite';
 
 .c-look-icon {
+  position: relative;
   display: inline-block;
   background-image: url($spritesheet-image);
   background-repeat: no-repeat;
   background-size: auto 100%;
+
+  transform: none;
+  filter: none;
+  transition: 0.2s all ease-in-out;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    transform: scale(1.2);
+  }
+}
+
+.c-look-icon.is-selected {
+  z-index: 2;
+  pointer-events: none;
+  transform: rotate(-5deg) scale(1.5);
 }
 
 .c-look-icon.nothing {

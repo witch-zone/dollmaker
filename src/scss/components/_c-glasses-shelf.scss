@@ -17,6 +17,11 @@
     background: none;
   }
 
+  .c-look-icon.is-selected {
+    filter: none;
+    transform: none;
+  }
+
   .c-look-icon.nothing {
     display: block;
   }
