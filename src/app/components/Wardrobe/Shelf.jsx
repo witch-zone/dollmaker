@@ -13,22 +13,19 @@ const Shelf = ({
       `c-wardrobe__shelf--${name}`,
     )}
   >
-    <div className="c-wardrobe__items">
-      {items.map((item) => (
-        <button
-          key={item.name}
-          type="button"
-          className={classnames(
-            'c-wardrobe-button',
-            'c-look-icon',
-            item.name,
-          )}
-          onClick={() => onClickItem(item.name)}
-        >
-          {item.name}
-        </button>
-      ))}
-    </div>
+    {items.map((item) => (
+      <button
+        key={item.name}
+        type="button"
+        title={`Wear ${item.name}'s ${name}!`}
+        className={classnames(
+          'c-wardrobe__button',
+          'c-look-icon',
+          item.name,
+        )}
+        onClick={() => onClickItem(item.name)}
+      />
+    ))}
   </div>
 )
 

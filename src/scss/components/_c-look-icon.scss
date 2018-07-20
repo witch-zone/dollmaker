@@ -1,12 +1,33 @@
 @import '~_icons-sprite';
 
 .c-look-icon {
+  display: inline-block;
   background-image: url($spritesheet-image);
   background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 
+.c-look-icon.nothing {
+  display: none;
+}
+
+// background-position refers to offset in the image, rather
+// than a direct place within it; to display a particular
+// sprite we need to position it to the start of the nth
+// sprite as a percentage
+
+// for example, when there are ten items in a spritesheet, laid out horizontally...
+// the start of the first sprite is 0%
+// the start of the second sprite is at 11.1%
+// rather than 0 and 10% like you might expect (100% / number of items)
+$number-of-sprites: length($spritesheet-sprites);
+$position-increment: 100% / ($number-of-sprites - 1);
+
 @each $icon in $spritesheet-sprites {
-  .c-look-icon.#{nth($icon, 10)} {
-    @include sprite-position($icon);
+  $name: nth($icon, 10);
+  $position: index($spritesheet-sprites, $icon) - 1;
+
+  .c-look-icon.#{$name} {
+    background-position: $position-increment * $position;
   }
 }
