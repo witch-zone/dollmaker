@@ -1,5 +1,7 @@
 const path = require('path')
+const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
+const SpritesmithPlugin = require('webpack-spritesmith')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -9,7 +11,27 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const autoprefixer = require('autoprefixer')
+const makeSprite = (sprite) => new SpritesmithPlugin({
+  src: {
+    cwd: `./src/assets/${sprite}/`,
+    glob: '*.png',
+  },
+  target: {
+    image: `./build/spritesmith-generated/${sprite}.png`,
+    css: [
+      [
+        `./build/spritesmith-generated/_${sprite}-sprite.scss`,
+        { format: 'scss' },
+      ],
+    ],
+  },
+  apiOptions: {
+    cssImageRef: `~${sprite}.png`,
+  },
+  spritesmithOptions: {
+    algorithm: 'left-right',
+  },
+})
 
 const common = {
   target: 'web',
@@ -68,6 +90,7 @@ const common = {
         test: /\.(jpe?g|png)$/i,
         include: [
           /src/,
+          /build/,
         ],
         use: [
           {
@@ -105,16 +128,22 @@ const common = {
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    modules: [
+      path.resolve(__dirname, 'build', 'spritesmith-generated'),
+      'node_modules',
+    ],
+    extensions: ['*', '.js', '.jsx', '.scss'],
   },
 
   plugins: [
     new CleanWebpackPlugin([
-      './dist',
+      'build',
+      'dist',
     ]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
+    makeSprite('icons'),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',
@@ -122,7 +151,7 @@ const common = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
-      inlineSource: 'preloader\.(.*)\.(js|css)$',
+      inlineSource: 'preloader.(.*).(js|css)$',
       minify: {
         collapseWhitespace: true,
         minifyCSS: true,
@@ -134,13 +163,13 @@ const common = {
       from: 'src/assets/looks/',
       to: 'assets/looks/',
     }]),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      disable: process.env.NODE_ENV !== 'production',
-      pngquant: {
-        quality: '80-100',
-      },
-    }),
+    // new ImageminPlugin({
+    //   test: /\.(jpe?g|png|gif|svg)$/i,
+    //   disable: process.env.NODE_ENV !== 'production',
+    //   pngquant: {
+    //     quality: '65-80',
+    //   },
+    // }),
   ],
 }
 

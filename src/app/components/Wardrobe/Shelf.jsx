@@ -18,7 +18,11 @@ const Shelf = ({
         <button
           key={item.name}
           type="button"
-          className="c-wardrobe-button"
+          className={classnames(
+            'c-wardrobe-button',
+            'c-look-icon',
+            item.name,
+          )}
           onClick={() => onClickItem(item.name)}
         >
           {item.name}

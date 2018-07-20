@@ -1,0 +1,12 @@
+@import '~_icons-sprite';
+
+.c-look-icon {
+  background-image: url($spritesheet-image);
+  background-repeat: no-repeat;
+}
+
+@each $icon in $spritesheet-sprites {
+  .c-look-icon.#{nth($icon, 10)} {
+    @include sprite-position($icon);
+  }
+}
