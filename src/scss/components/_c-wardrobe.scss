@@ -17,14 +17,6 @@
   align-items: stretch;
 }
 
-// glasses are sort of kind of hidden on the ui as a special treat
-.c-wardrobe__shelf--glasses {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
 .c-wardrobe__button {
   flex: 20% 1 1;
   appearance: none;

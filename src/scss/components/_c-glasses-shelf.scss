@@ -1,0 +1,23 @@
+// glasses are sort of kind of hidden on the ui as a special treat
+.c-glasses-shelf {
+  position: absolute;
+  z-index: 3;
+  top: $wardrobe-glasses-shelf-position;
+  left: 0;
+  width: 100%;
+
+  padding: $wardrobe-glasses-shelf-padding;
+
+  justify-content: space-between;
+
+  .c-look-icon {
+    flex: auto 0 0;
+    width: 5%;
+    padding-top: 5%;
+    background: none;
+  }
+
+  .c-look-icon.nothing {
+    display: block;
+  }
+}

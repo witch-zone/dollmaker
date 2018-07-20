@@ -11,6 +11,7 @@ const Shelf = ({
     className={classnames(
       'c-wardrobe__shelf',
       `c-wardrobe__shelf--${name}`,
+      `c-${name}-shelf`,
     )}
   >
     {items.map((item) => (
