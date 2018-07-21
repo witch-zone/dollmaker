@@ -1,5 +1,5 @@
 .c-lookmaker {
-  margin: 0 auto;
+  margin: $lookmaker-spacing;
   width: 94%;
   max-width: $max-vertical-display-width;
 }
@@ -48,6 +48,7 @@
 
 @media #{$mq-medium} {
   .c-lookmaker {
+    margin: $lookmaker-spacing-large;
     max-width: $max-horizontal-display-width;
 
     display: flex;

@@ -12,11 +12,14 @@ const Controls = ({
       className,
     )}
   >
+    not sure what to wear?
+    &nbsp;
     <button
+      className="c-plain-button"
       type="button"
       onClick={onRandomise}
     >
-      choose me a LOOK
+      let us pick a look for you!
     </button>
   </div>
 )
