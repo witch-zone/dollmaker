@@ -3,9 +3,11 @@
 @import 'settings/layout';
 @import 'settings/typography';
 @import 'settings/hot-looks-palette';
+@import 'settings/wallpaper';
 
 @import 'base/preloader';
 
+@import 'components/c-wallpaper';
 @import 'components/c-lookmaker';
 @import 'components/c-doll-wrapper';
 @import 'components/c-wardrobe-wrapper';
