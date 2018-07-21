@@ -2,6 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+const getShelfLabel = (shelf, item) => (
+  shelf === 'glasses'
+    ? `Try on the ${item} ${shelf}!`
+    : `Wear ${item}'s ${shelf}!`
+)
+
 const Shelf = ({
   name,
   selected,
@@ -19,7 +25,7 @@ const Shelf = ({
       <button
         key={item.name}
         type="button"
-        title={`Wear ${item.name}'s ${name}!`}
+        title={getShelfLabel(name, item.name)}
         className={classnames(
           'c-wardrobe__button',
           'c-look-icon',
