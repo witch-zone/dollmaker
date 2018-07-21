@@ -1,0 +1,20 @@
+.c-clear-button {
+  border-radius: 50%;
+  height: 1.6em;
+  width: 1.6em;
+  text-align: center;
+  text-decoration: none;
+
+  border: 0.1em solid $colour-highlight;
+  background: $colour-background-dark;
+  color: $colour-highlight;
+  box-shadow: 0 0 0 0.1em $colour-black;
+
+  &::before {
+    content: 'X';
+    display: block;
+    line-height: 0;
+    font-weight: $font-weight-bold;
+    font-size: 1.1em;
+  }
+}
