@@ -14,6 +14,7 @@ class Preloader extends Component {
   async componentDidMount() {
     await Promise.all([
       promiseMeAnImage('assets/wardrobe-1x.png'),
+      promiseMeAnImage('assets/icons.png'),
     ])
 
     showApp()
