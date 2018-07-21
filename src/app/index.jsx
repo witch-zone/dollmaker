@@ -18,11 +18,25 @@ const LookMaker = () => (
         </section>
       </div>
 
-      <div className="c-lookmaker__furniture c-lookmaker__wardrobe">
-        <nav className="c-lookmaker__controls c-wardrobe-wrapper">
-          <Wardrobe className="c-wardrobe-wrapper__wardrobe" />
-          <Controls className="c-wardrobe-wrapper__controls" />
-        </nav>
+      <input
+        id="drawer-input"
+        className="c-lookmaker__toggle c-drawer__input"
+        type="checkbox"
+      />
+
+      <label
+        id="drawer-toggle"
+        htmlFor="drawer-input"
+        className="c-drawer__toggle"
+      />
+
+      <div className="c-drawer__wrapper">
+        <div className="c-lookmaker__furniture c-lookmaker__wardrobe">
+          <nav className="c-lookmaker__controls c-wardrobe-wrapper">
+            <Wardrobe className="c-wardrobe-wrapper__wardrobe" />
+            <Controls className="c-wardrobe-wrapper__controls" />
+          </nav>
+        </div>
       </div>
     </main>
   </Provider>

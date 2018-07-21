@@ -1,0 +1,67 @@
+.c-drawer__toggle {
+  position: fixed;
+  z-index: 56;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background: $colour-background-dark;
+  border-top: 1px solid $colour-highlight;
+  text-decoration: underline;
+  font-weight: $font-weight-bold;
+
+  padding: 1em;
+  letter-spacing: 0.01em;
+  line-height: 0.8;
+
+  &::after {
+    content: 'Open up the wardrobe!';
+  }
+}
+
+.c-drawer__input {
+  position: fixed;
+  z-index: 57;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.c-drawer__wrapper {
+  position: fixed;
+  z-index: 55;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: scroll;
+  padding-bottom: $footer-spacing;
+
+  background: $colour-background;
+  text-align: center;
+
+  transform: translateX(100%);
+  transition: 0.6s transform ease-in-out;
+}
+
+.c-drawer__input:checked ~ .c-drawer__toggle {
+  &::after {
+    content: 'Go back to my look!';
+  }
+}
+
+.c-drawer__input:checked ~ .c-drawer__wrapper {
+  transform: none;
+}
+
+@media #{$mq-medium} {
+  .c-drawer__toggle {
+    display: none;
+  }
+
+  .c-drawer__wrapper {
+    position: static;
+    transform: none;
+    background: none;
+  }
+}

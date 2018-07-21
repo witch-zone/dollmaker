@@ -41,6 +41,11 @@
 .c-lookmaker__wardrobe {
   background-position: top right;
 
+  /* drawer-specific styling */
+  margin: $lookmaker-spacing;
+  width: 94%;
+  max-width: $max-vertical-display-width;
+
   &::before {
     padding-top: $wardrobe-aspect-ratio;
   }
@@ -48,13 +53,17 @@
 
 @media #{$mq-medium} {
   .c-lookmaker {
-    margin: $lookmaker-spacing-large;
     max-width: $max-horizontal-display-width;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: flex-start;
+
+    > * {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
   }
 
   .c-lookmaker__doll {
@@ -64,7 +73,9 @@
   }
 
   .c-lookmaker__wardrobe {
-    flex-grow: 1;
-    flex-shrink: 1;
+    /* drawer-specific styling */
+    margin: auto;
+    width: auto;
+    max-width: none;
   }
 }
