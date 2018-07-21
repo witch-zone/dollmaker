@@ -1,3 +1,6 @@
+import { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import promiseMeAnImage from './app/utils/promiseMeAnImage'
 
 const showApp = () => setTimeout(
@@ -7,10 +10,26 @@ const showApp = () => setTimeout(
   }, 666,
 )
 
-const preloader = () => (
-  Promise.all([
-    promiseMeAnImage('assets/wardrobe-1x.png'),
-  ]).then(showApp)
-)
+class Preloader extends Component {
+  async componentDidMount() {
+    await Promise.all([
+      promiseMeAnImage('assets/wardrobe-1x.png'),
+    ])
 
-export default preloader
+    showApp()
+  }
+
+  render() {
+    const {
+      children,
+    } = this.props
+
+    return children
+  }
+}
+
+Preloader.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Preloader
