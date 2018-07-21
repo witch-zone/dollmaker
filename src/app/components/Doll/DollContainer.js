@@ -16,10 +16,7 @@ const mapStateToProps = (state) => {
   const sortedLayers = sortByShelfAndOrder(layers)
 
   return {
-    layers: sortedLayers.filter(
-      // TODO: fix sparkle layers
-      (layer) => layer.shelf !== 'sparkle',
-    ),
+    layers: sortedLayers,
   }
 }
 
