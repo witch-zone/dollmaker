@@ -9,7 +9,7 @@ const showApp = () => setTimeout(
 
 const preloader = () => (
   Promise.all([
-    promiseMeAnImage('assets/wardrobe.png'),
+    promiseMeAnImage('assets/wardrobe-1x.png'),
   ]).then(showApp)
 )
 

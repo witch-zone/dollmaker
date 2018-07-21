@@ -163,13 +163,13 @@ const common = {
       from: 'src/assets/looks/',
       to: 'assets/looks/',
     }]),
-    // new ImageminPlugin({
-    //   test: /\.(jpe?g|png|gif|svg)$/i,
-    //   disable: process.env.NODE_ENV !== 'production',
-    //   pngquant: {
-    //     quality: '65-80',
-    //   },
-    // }),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      disable: process.env.NODE_ENV !== 'production',
+      pngquant: {
+        quality: '65-80',
+      },
+    }),
   ],
 }
 
