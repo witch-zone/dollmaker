@@ -8,9 +8,18 @@ import Doll from './components/Doll'
 import Wardrobe from './components/Wardrobe'
 import Controls from './components/Controls'
 
+import logo from '../assets/logo.png'
+
 const LookMaker = () => (
   <Provider store={configureStore()}>
     <main className="c-lookmaker">
+      <img
+        src={logo}
+        className="c-lookmaker__logo"
+        role="presentation"
+        alt="the witch zone LookMaker!"
+      />
+
       <div className="c-lookmaker__furniture c-lookmaker__doll">
         <section className="c-lookmaker__controls c-doll-wrapper">
           <Title className="c-doll-wrapper__title" />

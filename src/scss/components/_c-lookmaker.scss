@@ -1,7 +1,17 @@
 .c-lookmaker {
+  position: relative;
   margin: $lookmaker-spacing;
   width: 94%;
   max-width: $max-vertical-display-width;
+  padding-top: 6em;
+}
+
+.c-lookmaker__logo {
+  position: absolute;
+  bottom: 87%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%;
 }
 
 .c-lookmaker__furniture {
@@ -64,6 +74,12 @@
       flex-grow: 1;
       flex-shrink: 1;
     }
+  }
+
+  .c-lookmaker__logo {
+    max-width: 50%;
+    left: 0;
+    transform: rotate(-5deg);
   }
 
   .c-lookmaker__doll {
