@@ -1,15 +1,16 @@
 .p-logo {
-  width: 70vmin;
+  width: 70vw;
+}
 
-  img {
-    margin-bottom: 1em;
-  }
+.p-logo__message {
+  display: block;
+  margin-bottom: 1em;
 }
 
 .p-logo__throbber {
-  display: inline-block;
+  display: block;
   animation: rubber 2s infinite;
-  margin-left: -0.5em;
+  font-size: 2em;
 }
 
 @keyframes rubber {
