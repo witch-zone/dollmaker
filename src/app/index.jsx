@@ -3,8 +3,7 @@ import { Provider } from 'react-redux'
 
 import configureStore from './store'
 
-import Title from './components/Title'
-import Doll from './components/Doll'
+import Mirror from './components/Mirror'
 import Wardrobe from './components/Wardrobe'
 import Controls from './components/Controls'
 
@@ -21,10 +20,7 @@ const LookMaker = () => (
       />
 
       <div className="c-lookmaker__furniture c-lookmaker__doll">
-        <section className="c-lookmaker__controls c-doll-wrapper">
-          <Title className="c-doll-wrapper__title" />
-          <Doll className="c-doll-wrapper__doll" />
-        </section>
+        <Mirror className="c-lookmaker__controls" />
       </div>
 
       <input

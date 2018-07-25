@@ -10,3 +10,42 @@
   height: $doll-title-height;
   width: 100%;
 }
+
+.c-doll-wrapper__doll,
+.c-doll-wrapper__message {
+  transition: 0.3s all ease-in-out;
+}
+
+.c-doll-wrapper__message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: $doll-frame-padding;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  opacity: 0;
+  visibility: hidden;
+
+  font-size: 1.6em;
+  color: $colour-background;
+
+  &--is-loading {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.c-doll-wrapper__doll {
+  opacity: 1;
+  visibility: visible;
+
+  &--is-loading {
+    opacity: 0.2;
+  }
+}

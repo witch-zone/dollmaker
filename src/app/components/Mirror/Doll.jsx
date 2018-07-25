@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import deepEqual from 'fast-deep-equal'
 
 import promiseMeAnImage from '../../utils/promiseMeAnImage'
 
@@ -7,6 +8,22 @@ const baseDoll = promiseMeAnImage('assets/looks/base.png')
 
 const CANVAS_HEIGHT = 1331
 const CANVAS_WIDTH = 678
+
+const createImageForURL = (src) => {
+  const image = new Image()
+  image.src = src
+  return image
+}
+
+const isImageLoaded = (image) => (
+  image.complete
+)
+
+const areImagesLoaded = (images) => (
+  images
+    .map(createImageForURL)
+    .every(isImageLoaded)
+)
 
 class Doll extends Component {
   componentDidMount() {
@@ -22,7 +39,7 @@ class Doll extends Component {
       layers: newLayers,
     } = this.props
 
-    if (prevLayers !== newLayers) {
+    if (!deepEqual(prevLayers, newLayers)) {
       this.updateDoll()
     }
   }
@@ -46,30 +63,56 @@ class Doll extends Component {
       layers,
     } = this.props
 
-    const imagesToLoad = layers
+    const {
+      onStartLoad,
+      onFinishLoad,
+    } = this.props
+
+    const images = layers
       .map(
-        (layer) => promiseMeAnImage(`assets/looks/${layer.src}`),
+        (layer) => `assets/looks/${layer.src}`,
       )
 
-    // IDEA: spicy state for incomplete dolls?
-    // TODO: add loading state for doll
+    const timestamp = Date.now()
+    const requiresLoad = !areImagesLoaded(images)
 
-    // TODO: handle errors in loading images
-    const loadedImages = await Promise.all([
-      ...imagesToLoad,
-      baseDoll,
-    ])
+    if (requiresLoad) {
+      onStartLoad(timestamp)
+    }
 
-    const ctx = this.getNewGraphicsContext()
-
-    // we reverse the images before drawing so as to draw them
-    // from the bottom layer up; the doll layers should be passed
-    // to this component as a series of onion skin layers
-    loadedImages
-      .reverse()
-      .forEach(
-        (image) => ctx.drawImage(image, 0, 0, 339, 665),
+    const imageLoaders = images
+      .map(
+        (src) => promiseMeAnImage(src),
       )
+
+    try {
+      const loadedImages = await Promise.all([
+        ...imageLoaders,
+        baseDoll,
+      ])
+
+      const ctx = this.getNewGraphicsContext()
+
+      // we reverse the images before drawing so as to draw them
+      // from the bottom layer up; the doll layers should be passed
+      // to this component as a series of onion skin layers
+      loadedImages
+        .reverse()
+        .forEach(
+          (image) => ctx.drawImage(
+            image,
+            0, 0,
+            CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2,
+          ),
+        )
+    } catch (e) {
+      // TODO: handle errors in image load properly :(
+      console.error(e)
+    }
+
+    if (requiresLoad) {
+      onFinishLoad(timestamp)
+    }
   }
 
   render() {
@@ -98,6 +141,8 @@ Doll.propTypes = {
     src: PropTypes.string.isRequired,
   })),
   className: PropTypes.string,
+  onStartLoad: PropTypes.func.isRequired,
+  onFinishLoad: PropTypes.func.isRequired,
 }
 
 Doll.defaultProps = {

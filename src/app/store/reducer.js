@@ -35,8 +35,28 @@ const dollReducer = (
   }
 }
 
+const loadingReducer = (
+  state = [],
+  { type, payload },
+) => {
+  switch (type) {
+    case actions.SET_LOADING:
+      return [
+        ...state,
+        payload,
+      ]
+    case actions.CLEAR_LOADING:
+      return state.filter(
+        (key) => key !== payload,
+      )
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   looks: looksReducer,
   wardrobe: wardrobeReducer,
   doll: dollReducer,
+  loading: loadingReducer,
 })
