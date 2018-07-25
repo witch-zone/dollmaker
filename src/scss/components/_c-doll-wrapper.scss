@@ -23,6 +23,7 @@
   right: 0;
   bottom: 0;
   padding: $doll-frame-padding;
+  pointer-events: none;
 
   display: flex;
   align-items: center;
