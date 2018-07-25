@@ -2,30 +2,39 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+import Controls from './Controls'
 import Shelf from './Shelf'
 
 const Wardrobe = ({
   shelves,
   selected,
   onClickItem,
+  onRandomise,
   className,
 }) => (
-  <div
+  <nav
     className={classnames(
-      'c-wardrobe',
+      'c-wardrobe-wrapper',
       className,
     )}
   >
-    {shelves.map((shelf) => (
-      <Shelf
-        key={shelf.shelf}
-        name={shelf.shelf}
-        items={shelf.items}
-        selected={selected[shelf.shelf]}
-        onClickItem={(look) => onClickItem(shelf.shelf, look)}
-      />
-    ))}
-  </div>
+    <div className="c-wardrobe-wrapper__wardrobe c-wardrobe">
+      {shelves.map((shelf) => (
+        <Shelf
+          key={shelf.shelf}
+          name={shelf.shelf}
+          items={shelf.items}
+          selected={selected[shelf.shelf]}
+          onClickItem={(look) => onClickItem(shelf.shelf, look)}
+        />
+      ))}
+    </div>
+
+    <Controls
+      onRandomise={onRandomise}
+      className="c-wardrobe-wrapper__controls"
+    />
+  </nav>
 )
 
 Wardrobe.propTypes = {
@@ -35,6 +44,7 @@ Wardrobe.propTypes = {
   })),
   selected: PropTypes.shape({}),
   onClickItem: PropTypes.func.isRequired,
+  onRandomise: PropTypes.func.isRequired,
   className: PropTypes.string,
 }
 

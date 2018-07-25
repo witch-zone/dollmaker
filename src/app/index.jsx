@@ -5,7 +5,6 @@ import configureStore from './store'
 
 import Mirror from './components/Mirror'
 import Wardrobe from './components/Wardrobe'
-import Controls from './components/Controls'
 
 import logo from '../assets/logo.png'
 
@@ -37,10 +36,7 @@ const LookMaker = () => (
 
       <div className="c-drawer__wrapper">
         <div className="c-lookmaker__furniture c-lookmaker__wardrobe">
-          <nav className="c-lookmaker__controls c-wardrobe-wrapper">
-            <Wardrobe className="c-wardrobe-wrapper__wardrobe" />
-            <Controls className="c-wardrobe-wrapper__controls" />
-          </nav>
+          <Wardrobe className="c-lookmaker__controls" />
         </div>
       </div>
     </main>
